@@ -1,0 +1,61 @@
+/* ============================================
+   COLORS
+   Dark, near-black foundation with a layered
+   surface ramp. One hot accent (orange) carries
+   the brand; blue / purple / green / cyan are
+   supporting accents used on tinted cards.
+   ============================================ */
+:root {
+  /* ---- Surfaces (dark ramp, darkest → lightest) ---- */
+  --bg: #080808;            /* page background, near-black */
+  --bg-surface: #111111;    /* subtle raised surface (chips, badges) */
+  --bg-card: #141414;       /* default card background */
+  --bg-elevated: #1a1a1a;   /* elevated card / hover surface */
+
+  /* ---- Borders (hairline, low-contrast) ---- */
+  --border: #222222;        /* default 1px hairline border */
+  --border-light: #2a2a2a;  /* hover / emphasized border */
+
+  /* ---- Text ---- */
+  --text-primary: #f5f5f5;  /* headings & high-emphasis body */
+  --text-secondary: #888888;/* body copy, descriptions */
+  --text-muted: #555555;    /* labels, meta, captions, eyebrows */
+
+  /* ---- Accents ---- */
+  --accent-orange: #ff5500; /* PRIMARY brand accent — CTAs, dots, highlights */
+  --accent-blue:   #3b5bdb; /* supporting — UI/UX service card */
+  --accent-purple: #7048e8; /* supporting — art direction */
+  --accent-green:  #2f9e44; /* status: available / success */
+  --accent-cyan:   #0c8599; /* supporting — rare */
+
+  /* ---- Accent: tinted washes (for borders / fills over dark) ---- */
+  --orange-soft: rgba(255, 85, 0, 0.10);
+  --orange-line: rgba(255, 85, 0, 0.20);
+  --green-soft:  rgba(47, 158, 68, 0.12);
+
+  /* ---- Hairlines over light/colored surfaces ---- */
+  --white-fade: rgba(255, 255, 255, 0.06);
+  --on-color-fade: rgba(255, 255, 255, 0.10);
+  --on-dark-text: rgba(8, 8, 8, 0.60);  /* text on orange / colored cards */
+
+  /* ============================================
+     SEMANTIC ALIASES — prefer these in components
+     ============================================ */
+  --surface-page: var(--bg);
+  --surface-card: var(--bg-card);
+  --surface-raised: var(--bg-surface);
+  --surface-elevated: var(--bg-elevated);
+
+  --text-heading: var(--text-primary);
+  --text-body: var(--text-secondary);
+  --text-meta: var(--text-muted);
+
+  --border-default: var(--border);
+  --border-hover: var(--border-light);
+
+  --accent: var(--accent-orange);
+  --accent-hover: #ff6a1f;
+  --focus-ring: var(--accent-orange);
+
+  --status-available: var(--accent-green);
+}

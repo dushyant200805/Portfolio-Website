@@ -1,0 +1,54 @@
+/* ============================================
+   TYPOGRAPHY
+   Two families: Syne for everything display /
+   heading (always 700–800, tight tracking), and
+   DM Sans for body, labels and UI text.
+   Headings use fluid clamp() scales.
+   ============================================ */
+:root {
+  /* ---- Families ---- */
+  --font-heading: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  /* ---- Weights ---- */
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  /* ---- Fluid display scale (Syne, extrabold) ---- */
+  --text-display: clamp(3.5rem, 10vw, 10rem);   /* hero headline */
+  --text-h1: clamp(3rem, 8vw, 7rem);            /* page header */
+  --text-h2: clamp(2rem, 5vw, 4rem);            /* section title */
+  --text-h3: clamp(1.5rem, 3vw, 2.5rem);        /* card title */
+  --text-h4: 1.375rem;                          /* sub-card title */
+  --text-h5: 1.125rem;                          /* small heading */
+
+  /* ---- Body scale (DM Sans) ---- */
+  --text-lg: 1.125rem;     /* lead paragraph */
+  --text-base: 1rem;       /* body */
+  --text-sm: 0.9375rem;    /* dense body / inputs */
+  --text-xs: 0.875rem;     /* card descriptions */
+  --text-2xs: 0.8125rem;   /* meta, buttons-sm */
+  --text-3xs: 0.75rem;     /* labels, chips */
+  --text-eyebrow: 0.6875rem;/* uppercase eyebrows / tags */
+
+  /* ---- Line heights ---- */
+  --leading-display: 0.9;   /* tight headlines */
+  --leading-tight: 1.1;
+  --leading-snug: 1.2;
+  --leading-normal: 1.6;    /* body */
+  --leading-relaxed: 1.7;   /* descriptions */
+  --leading-loose: 1.8;     /* about prose */
+
+  /* ---- Letter spacing ---- */
+  --tracking-tighter: -0.05em;  /* big display */
+  --tracking-tight: -0.04em;
+  --tracking-snug: -0.03em;     /* most headings */
+  --tracking-normal: 0;
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.1em;
+  --tracking-widest: 0.12em;    /* uppercase eyebrows */
+}

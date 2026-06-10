@@ -1,0 +1,132 @@
+/* ============================================
+   BASE — resets, base element styling, brand
+   keyframes & a few signature utility classes.
+   ============================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Heading defaults */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-extrabold);
+  letter-spacing: var(--tracking-snug);
+  line-height: var(--leading-tight);
+  color: var(--text-primary);
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* Thin brand scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 2px; }
+
+/* ============================================
+   SIGNATURE UTILITIES
+   ============================================ */
+
+/* Eyebrow / section tag — uppercase label with a leading rule */
+.ds-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-eyebrow);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--text-muted);
+}
+.ds-eyebrow::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+}
+
+/* Outlined display text (hero "DESIGNER") */
+.ds-outline-text {
+  -webkit-text-stroke: 2px rgba(245, 245, 245, 0.3);
+  color: transparent;
+}
+
+/* Blurred background glow — drop inside a position:relative parent */
+.ds-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(var(--glow-blur));
+  opacity: var(--glow-opacity);
+  pointer-events: none;
+  background: var(--accent-orange);
+}
+
+/* Faint grid texture overlay */
+.ds-grid-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* ============================================
+   BRAND KEYFRAMES
+   ============================================ */
+
+/* Slow opacity pulse — status dots, "available" indicators */
+@keyframes ds-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Headline slide-up reveal */
+@keyframes ds-slide-up {
+  from { transform: translateY(110%); }
+  to { transform: translateY(0); }
+}
+
+/* Loader bar fill */
+@keyframes ds-loader-fill {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* Marquee ticker */
+@keyframes ds-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Floating in-card orb */
+@keyframes ds-orb-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(18px, -22px) scale(1.04); }
+  66% { transform: translate(-14px, 16px) scale(0.97); }
+}
+
+/* Scroll-line breathe */
+@keyframes ds-scroll-line {
+  0%, 100% { width: 40px; }
+  50% { width: 80px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

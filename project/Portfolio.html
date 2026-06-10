@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dushyant Prajapat � UI/UX Designer &amp; Frontend Developer</title>
+<meta name="description" content="Portfolio of Dushyant Prajapat � UI/UX Designer & Frontend Developer crafting premium digital experiences from Jodhpur, India." />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="portfolio-styles.css" />
+</head>
+<body>
+<script>
+const MARQ_ITEMS = ['UI/UX Design','React.js','Frontend Dev','Figma','JavaScript','Bootstrap 5','Responsive Design','jQuery','Adobe XD','CSS3','PHP','Mobile-First'];
+const PROJECTS = [
+  {featured:true,img:'uploads/HealthCare.webp',tags:['Admin Dashboard','React','Featured'],title:'HealthCare Admin Panel',desc:'A comprehensive healthcare administration dashboard featuring patient management, appointment scheduling, analytics modules, and a clean medical UI designed for real clinical workflows.',meta:'2025 � Featured Project',github:'https://github.com/dushyant200805'},
+  {img:'uploads/Crecketzen.png',tags:['HTML/CSS','Multi-page','Sports'],title:'Crickzgen � Cricket Academy',desc:'Advanced cricket training and coaching multipage website with team listings, match schedules, player profiles, and dynamic sports-themed visual identity.',meta:'2025 � Sports Template',github:'https://github.com/dushyant200805/Crickzgen-Creicket-Multipage-Template'},
+  {img:'uploads/florvelle.png',tags:['HTML/CSS','E-Commerce'],title:'Florvielle � Flower Shop',desc:'Multi-page flower shop website for professional florists with product galleries, smooth animations, and a sophisticated botanical design aesthetic.',meta:'2025 � E-Commerce',github:'https://github.com/dushyant200805/florvielle'},
+  {img:'uploads/hevintza.png',tags:['HTML/CSS/JS','NGO'],title:'Hevinta Trust � NGO Website',desc:'Multi-page NGO website template for trusts and charitable organizations with donation flows, cause pages, volunteer profiles, and responsive design.',meta:'2025 � Non-Profit',github:'https://github.com/dushyant200805/Hevinta-React-Template'},
+  {img:'uploads/Tennixa.png',tags:['HTML/CSS','Sports'],title:'Tennixa � Tennis Academy',desc:'Multi-page tennis academy website for professional coaching with tournament listings, player profiles, court rentals, and club memberships.',meta:'2025 � Sports Template',github:'https://github.com/dushyant200805'},
+  {img:'uploads/Ornuvia.png',tags:['HTML/CSS','E-Commerce'],title:'Ornuvia � Luxury Jewellery',desc:'Luxury multipage jewellery website template for modern businesses with product collections, elegant gallery, and sophisticated dark/light aesthetic.',meta:'2025 � E-Commerce',github:'https://github.com/dushyant200805'},
+  {img:'uploads/ShopCron.png',tags:['HTML/CSS','E-Commerce'],title:'ShopCron � Fashion Store',desc:'Stylish clothing and fashion e-commerce multipage website template with trending collections, brand showcase, testimonials, and blog integration.',meta:'2025 � Fashion',github:'https://github.com/dushyant200805'},
+  {img:'uploads/Techluno.png',tags:['HTML/CSS/JS','Corporate'],title:'Techluno � IT Solutions',desc:'Multi-page IT solutions template for modern technology companies with service listings, case studies, team profiles, and client testimonials.',meta:'2025 � Corporate IT',github:'https://github.com/dushyant200805'},
+  {img:'uploads/Nenobytech.png',tags:['HTML/CSS/JS','IT Services'],title:'Nanobytech � IT Services',desc:'Multi-page website template for advanced IT services with innovative solutions showcase, working process, case studies, and team sections.',meta:'2025 � IT Services',github:'https://github.com/dushyant200805'},
+  {img:'uploads/Luggoswift.png',tags:['HTML/CSS','Bootstrap 5.3'],title:'LuggoSwift � Transport',desc:'Transport multipage website template with logistics workflow, client testimonials, dark and light mode, W3C validated code, and PHP form integration.',meta:'2025 � Logistics',github:'https://github.com/dushyant200805'},
+  {img:'uploads/horserid.png',tags:['HTML/CSS','Bootstrap 5.3'],title:'HorseRid � Riding Club',desc:'Professional horse riding and equestrian club multipage website with responsive layout, dark/light mode, accessibility checks, and PHP email form.',meta:'2025 � Equestrian',github:'https://github.com/dushyant200805'},
+  {img:'uploads/Luvoio-spa.png',tags:['HTML/CSS','Wellness'],title:'Luvio Spa � Wellness Site',desc:'Premium multi-page spa and wellness website for elevated well-being with treatment listings, appointment booking, blog, and team showcase.',meta:'2025 � Wellness',github:'https://github.com/dushyant200805/Luvio-SPA-React-Template'},
+  {img:'uploads/Muclonus.png',tags:['HTML/CSS/JS','Fitness'],title:'Musclenox � Fitness Center',desc:'Modern multi-page website template for fitness and gym centers with program listings, trainer profiles, pricing plans, and contact integration.',meta:'2025 � Fitness',github:'https://github.com/dushyant200805'},
+  {img:'uploads/Jeckpotdeck.png',tags:['HTML/CSS/JS','Gaming'],title:'JackpotDeck � Casino Site',desc:'Multipage casino and betting website template with crypto lotteries, jackpot listings, top winners, premium game showcase, and player services.',meta:'2025 � Gaming',github:'https://github.com/dushyant200805'},
+  {img:'uploads/velontrax.png',tags:['HTML/CSS','Automotive'],title:'Velontrax � Car Rental',desc:'Multi-page car rental website template for reliable and affordable travel with fleet showcase, pricing plans, driver profiles, and testimonials.',meta:'2025 � Automotive',github:'https://github.com/dushyant200805'},
+  {img:'uploads/thumbnail.jpg',tags:['Admin Dashboard','JavaScript'],title:'Prime Panel � Admin Dashboard',desc:'Premium multi-purpose admin control panel with colorful charts, task planning, holiday calendar, notifications, and modular analytics components.',meta:'2025 � Admin UI',github:'https://github.com/dushyant200805'}
+];
+const SKILLS = [
+  {cat:'Languages',color:'var(--accent-blue)',items:['JavaScript','HTML5','CSS3','PHP']},
+  {cat:'Frontend',color:'var(--accent-orange)',items:['React.js','Bootstrap 5','jQuery','Responsive Web Design']},
+  {cat:'Design Tools',color:'var(--accent-purple)',items:['Figma','Adobe XD','Canva']},
+  {cat:'Concepts',color:'var(--accent-green)',items:['React Hooks','Component Architecture','DOM Manipulation','Mobile-First Design','Cross-Browser Compatibility']}
+];
+const EDUCATION = [
+  {degree:'Master of Computer Applications (MCA)',school:'Indira Gandhi National Open University (IGNOU)',period:'Jun 2026 � Present',status:'Currently Pursuing',color:'var(--accent-blue)'},
+  {degree:'Bachelor of Computer Applications (BCA)',school:'Lucky Institute of Professional Studies, Jodhpur',period:'Jun 2022 � Jun 2025',status:'CGPA: 7.86',color:'var(--accent-orange)'}
+];
+const CERTS = [
+  {name:'ReactJS for Beginners',org:'Simplilearn SkillUp',date:'May 2026'},
+  {name:'Claude 101',org:'Anthropic',date:'May 2026'}
+];
+const PROCESS = [
+  ['01','Discovery','Deep dive into your goals, users, and constraints. I ask hard questions early so we build the right thing.'],
+  ['02','Design','Wireframes, high-fidelity mockups, and interactive prototypes. Iterate quickly with real feedback loops.'],
+  ['03','Develop','Clean, semantic, performant code using React.js, Bootstrap 5, and modern CSS � pixel-perfect from Figma.'],
+  ['04','Deliver','Responsive, tested, and production-ready code. Ongoing support and maintenance as needed.']
+];
+const CONTACT_INFO = [
+  {label:'Email',value:'dush8387@gmail.com',ic:'mail',href:'mailto:dush8387@gmail.com'},
+  {label:'Phone',value:'+91 83878 01277',ic:'phone',href:'tel:+918387801277'},
+  {label:'Location',value:'Jodhpur, Rajasthan, India',ic:'mappin',href:null},
+  {label:'Availability',value:'Open � freelance & full-time',ic:'zap',href:null}
+];
+const SOCIALS = [
+  {ic:'github',label:'GitHub',url:'https://github.com/dushyant200805',desc:'View my repositories and open-source work'},
+  {ic:'linkedin',label:'LinkedIn',url:'https://linkedin.com/in/dushyant-prajapat-',desc:'Connect with me professionally'},
+  {ic:'instagram',label:'Instagram',url:'https://instagram.com/_http.dushyant',desc:'Follow my design journey and daily work'}
+];
+
+const SERVICE_CARDS = [
+  {n:'01',t:'UX/UI Design',ic:'grid',bg:'var(--accent-blue)',d:'User research, wireframing, prototyping, and pixel-perfect UI design.',list:['User Research & Strategy','Wireframes & Prototypes','Design Systems']},
+  {n:'02',t:'Frontend Development',ic:'code',bg:'var(--accent-orange)',d:'Converting designs into responsive, accessible frontend codebases.',list:['React.js / Bootstrap 5','Responsive Layouts','Interactive UI Features']},
+  {n:'03',t:'Web Design',ic:'monitor',bg:'var(--accent-purple)',d:'Landing pages and multi-page websites for diverse industries.',list:['Landing Pages','Multi-page Websites','Cross-Browser Compatibility']}
+];
+const SERVICE_CARDS_FULL = [
+  {n:'01',t:'UX/UI Design',ic:'grid',bg:'var(--accent-blue)',d:'User research, wireframing, prototyping, and pixel-perfect UI design. Every decision grounded in user needs and business goals.',list:['User Research & Strategy','Wireframes & Prototypes','Design Systems','Usability Testing']},
+  {n:'02',t:'Frontend Development',ic:'code',bg:'var(--accent-orange)',d:'Converting designs into high-performance, accessible, and maintainable frontend codebases using modern tools.',list:['React.js / Bootstrap 5','JavaScript & jQuery','Responsive Layouts','Performance Optimization']},
+  {n:'03',t:'Web Design & Development',ic:'monitor',bg:'var(--accent-purple)',d:'Landing pages and multi-page websites for IT, NGO, Spa, Sports, Car Rental, Farm, and E-Commerce sectors.',list:['Landing Pages','Multi-page Websites','E-Commerce Templates','Cross-Browser Compatibility']}
+];
+
+const ICON_SVG = {
+  arrow:'<line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>',
+  arrowRight:'<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>',
+  arrowUp:'<line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/>',
+  externalLink:'<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>',
+  download:'<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>',
+  briefcase:'<rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>',
+  mappin:'<path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/>',
+  mail:'<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>',
+  phone:'<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>',
+  zap:'<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
+  clock:'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+  pin:'<path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/>',
+  globe:'<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+  grid:'<rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/>',
+  code:'<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>',
+  monitor:'<rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>',
+  book:'<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>',
+  calendar:'<rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>',
+  award:'<circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>',
+  sun:'<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>',
+  moon:'<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>',
+  menu:'<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>',
+  x:'<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>'
+};
+
+function icon(name, size, stroke) {
+  const s = size || 16, sw = stroke || 2;
+  const p = ICON_SVG[name];
+  if (!p) return '';
+  return '<svg class="icon-svg" width="' + s + '" height="' + s + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + sw + '" stroke-linecap="round" stroke-linejoin="round">' + p + '</svg>';
+}
+
+function fillIcon(name, size) {
+  const s = size || 16;
+  const paths = {
+    github: '<path fill="currentColor" stroke="none" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>',
+    linkedin: '<path fill="currentColor" stroke="none" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>',
+    instagram: '<rect fill="none" stroke="currentColor" stroke-width="2" x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle fill="none" stroke="currentColor" stroke-width="2" cx="12" cy="12" r="5"/><circle fill="currentColor" stroke="none" cx="17.5" cy="6.5" r="1.5"/>'
+  };
+  const p = paths[name];
+  if (!p) return '';
+  return '<svg class="icon-svg" width="' + s + '" height="' + s + '" viewBox="0 0 24 24" fill="none" stroke="none">' + p + '</svg>';
+}
+
+function qs(s) { return document.querySelector(s); }
+function qsa(s) { return document.querySelectorAll(s); }
+function byId(id) { return document.getElementById(id); }
+
+let currentPage = 'home';
+
+/* === LOADER === */
+(function() {
+  const el = byId('loader'), counter = byId('loaderCounter'), name = byId('loaderName'), sub = byId('loaderSub'), fill = byId('loaderFill');
+  const start = Date.now(), duration = 2200;
+  function tick() {
+    const elapsed = Date.now() - start, progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3), count = Math.round(eased * 100);
+    counter.textContent = count;
+    fill.style.width = count + '%';
+    if (count > 20) { name.style.opacity = '1'; }
+    if (count > 50) { sub.style.opacity = '1'; }
+    if (progress >= 1) {
+      setTimeout(function() {
+        el.classList.add('done');
+        setTimeout(function() { el.style.display = 'none'; app(); }, 600);
+      }, 300);
+    } else { requestAnimationFrame(tick); }
+  }
+  requestAnimationFrame(tick);
+})();
+
+/* === APP === */
+function app() {
+  loadTheme();
+  buildMarquee();
+  buildBento();
+  buildServicesPreview();
+  buildWork();
+  buildServicesDetail();
+  buildProcess();
+  buildSkills();
+  buildEducation();
+  buildCerts();
+  buildResumeCta();
+  buildContactInfo();
+  buildSocial();
+  buildContactCta();
+  buildAboutStats();
+  buildExperience();
+  navigate(getInitialPage());
+  initScrollNav();
+  initScrollReveal();
+  initHeroAnimation();
+  initBackToTop();
+  initHashListener();
+}
+
+function getInitialPage() {
+  const hash = window.location.hash.replace('#','');
+  return ['home','work','services','about','contact'].includes(hash) ? hash : 'home';
+}
+
+function navigate(page) {
+  currentPage = page;
+  window.location.hash = page;
+  qsa('.page').forEach(function(p) { p.classList.remove('active'); });
+  var target = byId('page-' + page);
+  if (target) {
+    target.classList.add('active');
+    target.classList.remove('page-enter');
+    void target.offsetWidth;
+    target.classList.add('page-enter');
+    setTimeout(function() { target.classList.add('visible'); }, 30);
+  }
+  updateNav();
+  window.scrollTo({top: 0});
+}
+
+function updateNav() {
+  qsa('.nav-link').forEach(function(l) { l.classList.toggle('active', l.dataset.nav === currentPage); });
+  qsa('.mobile-nav-link').forEach(function(l) { l.classList.toggle('active', l.dataset.nav === currentPage); });
+}
+
+function openMobileNav() { byId('mobileNav').classList.add('open'); }
+function closeMobileNav() { byId('mobileNav').classList.remove('open'); }
+
+/* === THEME === */
+function loadTheme() {
+  var t = localStorage.getItem('dp-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', t);
+  updateThemeIcon(t);
+}
+function toggleTheme() {
+  var current = document.documentElement.getAttribute('data-theme');
+  var next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('dp-theme', next);
+  updateThemeIcon(next);
+}
+function updateThemeIcon(theme) {
+  var html = theme === 'dark'
+    ? icon('sun', 16)
+    : icon('moon', 16);
+  qsa('.theme-toggle').forEach(function(b) { b.innerHTML = html; });
+}
+
+/* === SCROLL NAV === */
+function initScrollNav() {
+  var nav = byId('nav');
+  window.addEventListener('scroll', function() {
+    nav.classList.toggle('nav-scrolled', window.scrollY > 20);
+  }, {passive: true});
+}
+
+/* === SCROLL REVEAL === */
+function initScrollReveal() {
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
+  qsa('.sr').forEach(function(el) { obs.observe(el); });
+}
+
+/* === HERO ANIMATION === */
+function initHeroAnimation() {
+  setTimeout(function() {
+    qsa('.hero-line-inner').forEach(function(el) { el.classList.add('visible'); });
+  }, 300);
+}
+
+/* === BACK TO TOP === */
+function initBackToTop() {
+  var btn = byId('backToTop');
+  window.addEventListener('scroll', function() {
+    btn.classList.toggle('show', window.scrollY > 400);
+  }, {passive: true});
+}
+
+/* === HASH LISTENER === */
+function initHashListener() {
+  window.addEventListener('hashchange', function() {
+    var hash = window.location.hash.replace('#','');
+    if (['home','work','services','about','contact'].includes(hash) && hash !== currentPage) navigate(hash);
+  });
+}
+/* === BUILDERS === */
+function buildMarquee() {
+  var doubled = MARQ_ITEMS.concat(MARQ_ITEMS);
+  var h = '';
+  doubled.forEach(function(it) {
+    h += '<div class="marquee-item"><span class="marquee-dot"></span>' + it + '</div>';
+  });
+  var track = byId('marqueeTrack');
+  track.innerHTML = h;
+  track.classList.add('animate');
+}
+
+function buildBento() {
+  byId('bentoGrid').innerHTML =
+    '<div class="card" style="background:linear-gradient(135deg,#0f0f0f 0%,#1a0a00 100%);padding:40px;grid-column:1/8;grid-row:1/4;display:flex;flex-direction:column;justify-content:flex-end;color:#f5f5f5">' +
+      '<div style="position:absolute;width:300px;height:300px;border-radius:50%;background:var(--accent-orange);filter:blur(60px);opacity:0.12;top:-50px;right:-50px;pointer-events:none;animation:orbFloat 12s ease infinite"></div>' +
+      '<div class="card-grid-overlay"></div>' +
+      '<div class="card-content" style="display:flex;flex-direction:column;justify-content:space-between">' +
+        '<div class="sr" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:auto">' +
+          '<span style="font-size:var(--text-eyebrow);font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:rgba(245,245,245,0.4)">Primary discipline</span>' +
+          '<div style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag tag-soft">React.js</span><span class="tag tag-soft">Figma</span><span class="tag tag-soft">Bootstrap</span></div>' +
+        '</div>' +
+        '<div class="sr sr-delay-1" style="font-family:var(--font-heading);font-weight:800;font-size:var(--text-h2);letter-spacing:var(--tracking-snug);line-height:var(--leading-display);margin:32px 0 14px;color:#f5f5f5">Design<br/><span style="color:var(--accent-orange)">&amp;</span> Code</div>' +
+        '<p class="sr sr-delay-2" style="max-width:420px;font-size:var(--text-sm);color:#888;line-height:var(--leading-relaxed);margin:0 0 22px">Bridging the gap between great design and solid engineering � crafting interfaces that look premium and perform flawlessly.</p>' +
+        '<div class="sr sr-delay-3" style="display:flex;align-items:center;gap:32px;padding-top:22px;border-top:1px solid rgba(255,255,255,0.06);flex-wrap:wrap">' +
+          '<div class="stat"><div class="stat-value">17+</div><div class="stat-label">Projects</div></div>' +
+          '<div class="stat"><div class="stat-value">1+</div><div class="stat-label">Yrs Exp</div></div>' +
+          '<div class="stat"><div class="stat-value accent">100%</div><div class="stat-label">Remote-ready</div></div>' +
+          '<button class="btn btn-primary btn-sm" onclick="navigate(\'work\')" style="margin-left:auto">See Work' + icon('arrow',13) + '</button>' +
+        '</div>' +
+      '</div>' +
+    '</div>' +
+    '<div class="card card-interactive" style="padding:32px;grid-column:8/13;grid-row:1/2;display:flex;flex-direction:column;justify-content:space-between;gap:18px">' +
+      '<span class="sr" style="display:flex;align-items:center;gap:8px;font-size:var(--text-3xs);color:var(--text-secondary)"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent-green);flex-shrink:0;animation:pulse 2s ease infinite"></span>Currently available</span>' +
+      '<div class="sr sr-delay-1"><div style="font-family:var(--font-heading);font-weight:700;font-size:var(--text-h4);margin-bottom:8px">Open to Work</div>' +
+        '<p style="font-size:var(--text-2xs);color:var(--text-secondary);line-height:var(--leading-normal);margin:0 0 14px">Accepting freelance &amp; full-time opportunities.</p>' +
+        '<div style="display:flex;flex-direction:column;gap:9px">' +
+          '<div style="display:flex;align-items:center;gap:9px;font-size:var(--text-2xs);color:var(--text-muted)">' + icon('clock',12) + 'Response within 24 hrs</div>' +
+          '<div style="display:flex;align-items:center;gap:9px;font-size:var(--text-2xs);color:var(--text-muted)">' + icon('pin',12) + 'Jodhpur, India &middot; IST (UTC +5:30)</div>' +
+          '<div style="display:flex;align-items:center;gap:9px;font-size:var(--text-2xs);color:var(--text-muted)">' + icon('globe',12) + 'Remote globally</div>' +
+        '</div>' +
+      '</div>' +
+      '<button class="btn btn-outline btn-sm" onclick="navigate(\'contact\')" style="align-self:flex-start">Let\'s talk' + icon('arrow',13) + '</button>' +
+    '</div>' +
+    '<div class="card" style="background:var(--accent-orange);padding:32px;grid-column:8/13;grid-row:2/4;display:flex;flex-direction:column;justify-content:space-between;border-color:transparent">' +
+      '<div style="position:absolute;width:200px;height:200px;border-radius:50%;background:#fff;filter:blur(60px);opacity:0.1;pointer-events:none"></div>' +
+      '<span class="tag tag-soft-dark" style="align-self:flex-start">Approach</span>' +
+      '<div class="sr"><div style="font-family:var(--font-heading);font-weight:800;font-size:clamp(1.4rem,2.8vw,2rem);letter-spacing:var(--tracking-snug);line-height:1.05;color:#080808;margin-bottom:14px">Pixel-Perfect<br/>Design &amp;<br/>Clean Code</div>' +
+        '<div style="display:flex;flex-direction:column;gap:8px">' +
+          '<div style="display:flex;align-items:center;gap:8px;font-size:var(--text-2xs);color:rgba(8,8,8,0.6)"><span style="width:5px;height:5px;border-radius:50%;background:rgba(8,8,8,0.4);flex-shrink:0"></span>Component-based architecture</div>' +
+          '<div style="display:flex;align-items:center;gap:8px;font-size:var(--text-2xs);color:rgba(8,8,8,0.6)"><span style="width:5px;height:5px;border-radius:50%;background:rgba(8,8,8,0.4);flex-shrink:0"></span>Mobile-first responsive design</div>' +
+          '<div style="display:flex;align-items:center;gap:8px;font-size:var(--text-2xs);color:rgba(8,8,8,0.6)"><span style="width:5px;height:5px;border-radius:50%;background:rgba(8,8,8,0.4);flex-shrink:0"></span>Figma to code precision</div>' +
+        '</div>' +
+      '</div>' +
+    '</div>' +
+    '<div class="card card-interactive" style="background:var(--accent-blue);padding:32px;grid-column:1/5;grid-row:4/7;display:flex;flex-direction:column;justify-content:flex-end;border-color:transparent;cursor:pointer" onclick="navigate(\'services\')">' +
+      '<span class="tag tag-soft" style="align-self:flex-start;margin-bottom:auto">Service</span>' +
+      '<div class="sr" style="font-family:var(--font-heading);font-weight:800;font-size:clamp(1.25rem,2.5vw,2rem);letter-spacing:var(--tracking-snug);line-height:1;color:#fff;margin:24px 0 12px">UI/UX<br/>Design</div>' +
+      '<div class="sr sr-delay-1" style="display:flex;flex-direction:column;gap:7px;margin-bottom:16px">' +
+        '<span style="font-size:var(--text-2xs);color:rgba(255,255,255,0.55)">&#8594; Wireframes &amp; Prototypes</span>' +
+        '<span style="font-size:var(--text-2xs);color:rgba(255,255,255,0.55)">&#8594; Design Systems</span>' +
+        '<span style="font-size:var(--text-2xs);color:rgba(255,255,255,0.55)">&#8594; User Research</span>' +
+      '</div>' +
+    '</div>' +
+    '<div class="card card-interactive" style="padding:0;grid-column:5/9;grid-row:4/7;display:flex;flex-direction:column;cursor:pointer" onclick="navigate(\'work\')">' +
+      '<div style="flex:1;position:relative;overflow:hidden;min-height:180px">' +
+        '<img src="uploads/HealthCare.webp" alt="HealthCare Admin Panel" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top left;display:block"/>' +
+        '<div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,8,0.7) 0%,transparent 50%);pointer-events:none"></div>' +
+      '</div>' +
+      '<div style="padding:14px 24px;display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--border)">' +
+        '<div style="display:flex;align-items:center;justify-content:space-between">' +
+          '<div><div style="font-size:var(--text-eyebrow);color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px">React &middot; JavaScript &middot; Bootstrap</div>' +
+          '<div style="font-family:var(--font-heading);font-weight:800;font-size:1.0625rem;letter-spacing:var(--tracking-snug)">HealthCare Admin Panel</div></div>' +
+          '<span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);flex-shrink:0">' + icon('arrow',14) + '</span>' +
+        '</div>' +
+        '<p style="font-size:var(--text-2xs);color:var(--text-muted);line-height:var(--leading-normal);margin:0">Patient management, scheduling, and analytics � designed for real clinical workflows.</p>' +
+      '</div>' +
+    '</div>' +
+    '<div class="card" style="padding:32px;grid-column:9/13;grid-row:4/7">' +
+      '<div class="sr" style="display:flex;justify-content:space-between;margin-bottom:14px"><span style="font-size:var(--text-eyebrow);font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-muted)">My toolkit</span><span style="font-size:var(--text-eyebrow);color:var(--text-muted)">10+ tools</span></div>' +
+      '<div class="sr sr-delay-1" style="font-family:var(--font-heading);font-weight:800;font-size:var(--text-h4);letter-spacing:var(--tracking-snug);margin-bottom:16px">Tech Stack</div>' +
+      '<div class="sr sr-delay-2" style="display:flex;flex-direction:column;gap:12px">' +
+        '<div><div style="font-size:0.625rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent-blue);margin-bottom:7px">Design</div><div style="display:flex;flex-wrap:wrap;gap:8px">' +
+          ['Figma','Adobe XD','Canva'].map(function(t){return '<span class="chip">' + t + '</span>';}).join('') + '</div></div>' +
+        '<div><div style="font-size:0.625rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent-orange);margin-bottom:7px">Frontend</div><div style="display:flex;flex-wrap:wrap;gap:8px">' +
+          ['React.js','Bootstrap 5','jQuery','JavaScript'].map(function(t){return '<span class="chip">' + t + '</span>';}).join('') + '</div></div>' +
+        '<div><div style="font-size:0.625rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent-purple);margin-bottom:7px">Backend</div><div style="display:flex;flex-wrap:wrap;gap:8px">' +
+          ['PHP','ColdFusion','HTML5','CSS3'].map(function(t){return '<span class="chip">' + t + '</span>';}).join('') + '</div></div>' +
+      '</div>' +
+    '</div>';
+}
+
+function buildServiceCards(cards, containerId) {
+  var h = '';
+  cards.forEach(function(c, i) {
+    h += '<div class="service-card sr sr-delay-' + (i+1) + '" style="background:' + c.bg + '">' +
+      '<div style="font-family:var(--font-heading);font-size:var(--text-3xs);font-weight:700;color:rgba(255,255,255,0.3);letter-spacing:0.12em;margin-bottom:40px">' + c.n + '</div>' +
+      '<svg class="icon-svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:24px">' + ICON_SVG[c.ic] + '</svg>' +
+      '<h3 style="margin:0 0 16px;font-family:var(--font-heading);font-weight:800;font-size:clamp(1.25rem,2vw,1.75rem);letter-spacing:var(--tracking-snug);color:#fff;line-height:var(--leading-tight)">' + c.t + '</h3>' +
+      '<p style="font-size:var(--text-xs);color:rgba(255,255,255,0.65);line-height:var(--leading-relaxed);margin:0 0 28px">' + c.d + '</p>' +
+      '<div style="display:flex;flex-direction:column;gap:8px">';
+    c.list.forEach(function(li) {
+      h += '<div style="display:flex;align-items:center;gap:8px;font-size:var(--text-2xs);color:rgba(255,255,255,0.55)"><span style="width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.4);flex-shrink:0"></span>' + li + '</div>';
+    });
+    h += '</div></div>';
+  });
+  byId(containerId).innerHTML = h;
+}
+
+function buildServicesPreview() { buildServiceCards(SERVICE_CARDS, 'servicesPreviewGrid'); }
+function buildServicesDetail() { buildServiceCards(SERVICE_CARDS_FULL, 'servicesDetailGrid'); }
+
+function buildWork() {
+  var h = '';
+  PROJECTS.forEach(function(p, i) {
+    var feat = p.featured ? ' style="grid-column:1/-1"' : '';
+    h += '<a href="' + p.github + '" target="_blank" rel="noopener noreferrer" class="sr sr-delay-' + ((i % 3) + 1) + '"' + feat + '>' +
+      '<div class="card card-interactive" style="padding:0;display:block;overflow:hidden;text-decoration:none;color:inherit">' +
+        '<div style="position:relative;overflow:hidden;aspect-ratio:' + (p.featured ? '21/9' : '16/9') + ';background:var(--bg-elevated)">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;display:block"/>' +
+        '</div>' +
+        '<div style="padding:28px">' +
+          '<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px">' + p.tags.map(function(t){return '<span class="tag">' + t + '</span>';}).join('') + '</div>' +
+          '<h3 style="margin:0 0 8px;font-family:var(--font-heading);font-weight:800;font-size:clamp(1.25rem,2.5vw,1.75rem);letter-spacing:var(--tracking-snug)">' + p.title + '</h3>' +
+          '<p style="font-size:var(--text-xs);color:var(--text-secondary);line-height:var(--leading-normal);margin:0">' + p.desc + '</p>' +
+          '<div style="display:flex;align-items:center;justify-content:space-between;margin-top:20px;padding-top:20px;border-top:1px solid var(--border)">' +
+            '<span style="font-size:var(--text-3xs);color:var(--text-muted)">' + p.meta + '</span>' +
+            '<span style="display:flex;align-items:center;gap:6px;font-size:var(--text-2xs);font-weight:500;color:var(--text-secondary)">View project ' + icon('externalLink',14) + '</span>' +
+          '</div>' +
+        '</div>' +
+      '</div></a>';
+  });
+  byId('workGrid').innerHTML = h;
+}
+
+function buildProcess() {
+  var h = '';
+  PROCESS.forEach(function(p, i) {
+    h += '<div class="sr sr-delay-' + (i+1) + '" style="padding:40px 32px;border-right:' + (i === PROCESS.length-1 ? 'none' : '1px solid var(--border)') + '">' +
+      '<span style="font-family:var(--font-heading);font-weight:800;font-size:var(--text-h2);letter-spacing:var(--tracking-tighter);color:var(--border-light);display:block;margin-bottom:16px">' + p[0] + '</span>' +
+      '<h3 style="margin:0 0 12px;font-family:var(--font-heading);font-weight:700;font-size:var(--text-h5)">' + p[1] + '</h3>' +
+      '<p style="font-size:var(--text-2xs);color:var(--text-muted);line-height:var(--leading-relaxed);margin:0">' + p[2] + '</p>' +
+    '</div>';
+  });
+  byId('processGrid').innerHTML = h;
+}
+
+function buildSkills() {
+  var h = '';
+  SKILLS.forEach(function(s, i) {
+    h += '<div class="card sr sr-delay-' + (i+1) + '" style="padding:32px">' +
+      '<div style="font-size:var(--text-eyebrow);font-weight:600;text-transform:uppercase;letter-spacing:var(--tracking-widest);color:' + s.color + ';margin-bottom:16px">' + s.cat + '</div>' +
+      '<div style="display:flex;flex-wrap:wrap;gap:8px">' + s.items.map(function(t){return '<span class="chip">' + t + '</span>';}).join('') + '</div>' +
+    '</div>';
+  });
+  byId('skillsGrid').innerHTML = h;
+}
+
+function buildEducation() {
+  var h = '';
+  EDUCATION.forEach(function(ed, i) {
+    h += '<div class="card sr sr-delay-' + (i+1) + '" style="padding:32px">' +
+      '<div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">' +
+      '<div style="width:48px;height:48px;border-radius:var(--radius-md);background:' + ed.color + ';color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0">' +
+          icon('book', 22) +
+        '</div>' +
+        '<span class="badge"><span class="badge-dot" style="background:' + ed.color + ';animation:pulse 2s ease infinite"></span>' + ed.status + '</span>' +
+      '</div>' +
+      '<h3 style="margin:0 0 8px;font-family:var(--font-heading);font-weight:700;font-size:var(--text-h5)">' + ed.degree + '</h3>' +
+      '<p style="font-size:var(--text-xs);color:var(--text-secondary);margin:0 0 12px;line-height:var(--leading-normal)">' + ed.school + '</p>' +
+      '<div style="display:flex;align-items:center;gap:6px;font-size:var(--text-2xs);color:var(--text-muted)">' + icon('calendar',12) + ed.period + '</div>' +
+    '</div>';
+  });
+  byId('educationGrid').innerHTML = h;
+}
+
+function buildCerts() {
+  var h = '';
+  CERTS.forEach(function(c, i) {
+    h += '<div class="card sr sr-delay-' + (i+1) + '" style="padding:28px;flex:1 1 280px">' +
+      '<div style="display:flex;align-items:flex-start;gap:16px">' +
+        '<div style="width:40px;height:40px;border-radius:50%;background:var(--orange-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0">' +
+          icon('award', 18) +
+        '</div>' +
+        '<div><h4 style="margin:0 0 4px;font-family:var(--font-heading);font-weight:700;font-size:var(--text-h5)">' + c.name + '</h4>' +
+        '<p style="font-size:var(--text-xs);color:var(--text-secondary);margin:0 0 8px">' + c.org + '</p>' +
+        '<div style="display:flex;align-items:center;gap:6px;font-size:var(--text-2xs);color:var(--text-muted)">' + icon('calendar',12) + c.date + '</div></div>' +
+      '</div></div>';
+  });
+  byId('certsGrid').innerHTML = h;
+}
+
+function buildResumeCta() {
+  byId('resumeCta').innerHTML = '<div class="card-content">' +
+    '<h2 style="margin:0 0 16px;font-family:var(--font-heading);font-weight:800;font-size:var(--text-h2);letter-spacing:var(--tracking-snug);line-height:1;color:#080808">Want the full picture?</h2>' +
+    '<p style="font-size:var(--text-base);color:rgba(8,8,8,0.6);margin:0 0 32px;max-width:440px;margin-left:auto;margin-right:auto;line-height:var(--leading-normal)">Download my resume for the complete rundown of skills, experience, and education.</p>' +
+    '<div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">' +
+      '<a class="btn btn-lg" href="uploads/Dushyant-Resume 1.pdf" target="_blank" rel="noopener noreferrer" style="background:#080808;color:#fff">Download Resume' + icon('download',18) + '</a>' +
+      '<button class="btn btn-lg" onclick="navigate(\'contact\')" style="border-color:rgba(8,8,8,0.3);color:#080808;background:transparent">Get in touch' + icon('arrowRight',18) + '</button>' +
+    '</div></div>';
+}
+
+function buildAboutStats() {
+  byId('aboutStatsCard').innerHTML =
+    '<div style="position:absolute;width:200px;height:200px;border-radius:50%;background:var(--accent-orange);filter:blur(60px);opacity:0.1;top:-20px;right:-20px;pointer-events:none"></div>' +
+    '<div class="card-content sr" style="display:flex;flex-direction:column;gap:24px">' +
+      '<div style="display:flex;gap:40px;flex-wrap:wrap">' +
+        '<div class="stat"><div class="stat-value">16+</div><div class="stat-label">Projects</div></div>' +
+        '<div class="stat"><div class="stat-value">1+</div><div class="stat-label">Years Exp</div></div>' +
+        '<div class="stat"><div class="stat-value accent">13+</div><div class="stat-label">Websites</div></div>' +
+      '</div>' +
+      '<div style="border-top:1px solid var(--border);padding-top:20px;display:flex;flex-direction:column;gap:12px">' +
+        '<div style="display:flex;align-items:center;gap:8px;font-size:var(--text-sm);color:var(--text-secondary)">' + icon('mappin',14) + 'Jodhpur, Rajasthan, India</div>' +
+        '<div style="display:flex;align-items:center;gap:8px;font-size:var(--text-sm);color:var(--text-secondary)">' + icon('briefcase',14) + 'Lucid Outsourcing Solutions</div>' +
+      '</div>' +
+      '<div style="display:flex;gap:12px;flex-wrap:wrap">' +
+        '<a href="https://github.com/dushyant200805" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:8px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:999px;padding:8px 16px;font-size:var(--text-2xs);font-weight:500;color:var(--text-secondary);text-decoration:none;transition:all var(--transition)">' + fillIcon('github',14) + 'GitHub</a>' +
+        '<a href="https://linkedin.com/in/dushyant-prajapat-" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:8px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:999px;padding:8px 16px;font-size:var(--text-2xs);font-weight:500;color:var(--text-secondary);text-decoration:none;transition:all var(--transition)">' + fillIcon('linkedin',14) + 'LinkedIn</a>' +
+        '<a href="https://instagram.com/_http.dushyant" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:8px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:999px;padding:8px 16px;font-size:var(--text-2xs);font-weight:500;color:var(--text-secondary);text-decoration:none;transition:all var(--transition)">' + fillIcon('instagram',14) + 'Instagram</a>' +
+      '</div>' +
+    '</div>';
+}
+
+function buildExperience() {
+  byId('experienceCard').innerHTML =
+    '<div class="sr" style="display:flex;gap:20px">' +
+      '<div style="display:flex;flex-direction:column;align-items:center;padding-top:4px">' +
+        '<div class="timeline-dot"></div>' +
+        '<div style="width:2px;flex:1;background:var(--border);margin-top:8px"></div>' +
+      '</div>' +
+      '<div style="flex:1">' +
+        '<div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:12px">' +
+          '<div><h3 style="margin:0 0 4px;font-family:var(--font-heading);font-weight:700;font-size:var(--text-h5)">Frontend Web Developer / UI Developer</h3>' +
+          '<div style="display:flex;align-items:center;gap:8px;font-size:var(--text-sm);color:var(--accent-orange)">' + icon('briefcase',14) + 'Lucid Outsourcing Solutions Pvt. Ltd.</div></div>' +
+          '<span class="badge"><span class="badge-dot" style="animation:pulse 2s ease infinite"></span>Aug 2025 � Present</span>' +
+        '</div>' +
+        '<div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:16px;display:flex;align-items:center;gap:6px">' + icon('mappin',12) + 'Jodhpur, Rajasthan</div>' +
+        '<div style="display:flex;flex-direction:column;gap:10px">' +
+          '<div style="display:flex;gap:10px;font-size:var(--text-xs);color:var(--text-secondary);line-height:var(--leading-normal)"><span style="color:var(--accent-orange);flex-shrink:0;margin-top:2px">&#8594;</span><span>Developed 13+ responsive landing pages and multi-page websites using HTML5, CSS3, JavaScript, Bootstrap 5, and jQuery.</span></div>' +
+          '<div style="display:flex;gap:10px;font-size:var(--text-xs);color:var(--text-secondary);line-height:var(--leading-normal)"><span style="color:var(--accent-orange);flex-shrink:0;margin-top:2px">&#8594;</span><span>Built a fully responsive React.js website using reusable components and Bootstrap-based layouts.</span></div>' +
+          '<div style="display:flex;gap:10px;font-size:var(--text-xs);color:var(--text-secondary);line-height:var(--leading-normal)"><span style="color:var(--accent-orange);flex-shrink:0;margin-top:2px">&#8594;</span><span>Converted Figma high-fidelity designs into pixel-perfect, responsive frontend interfaces.</span></div>' +
+          '<div style="display:flex;gap:10px;font-size:var(--text-xs);color:var(--text-secondary);line-height:var(--leading-normal)"><span style="color:var(--accent-orange);flex-shrink:0;margin-top:2px">&#8594;</span><span>Created reusable UI components to improve development speed and maintain design consistency.</span></div>' +
+          '<div style="display:flex;gap:10px;font-size:var(--text-xs);color:var(--text-secondary);line-height:var(--leading-normal)"><span style="color:var(--accent-orange);flex-shrink:0;margin-top:2px">&#8594;</span><span>Implemented interactive UI features including sliders, tabs, modals, dropdowns, accordions, and form validation.</span></div>' +
+          '<div style="display:flex;gap:10px;font-size:var(--text-xs);color:var(--text-secondary);line-height:var(--leading-normal)"><span style="color:var(--accent-orange);flex-shrink:0;margin-top:2px">&#8594;</span><span>Collaborated with designers, developers, and project managers to deliver clean, user-friendly web interfaces.</span></div>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+}
+
+function buildContactInfo() {
+  var h = '';
+  CONTACT_INFO.forEach(function(c, i) {
+    var inner = '<div class="card sr sr-delay-' + (i+1) + '" style="padding:28px;height:100%">' +
+      '<div style="width:48px;height:48px;border-radius:var(--radius-md);background:var(--orange-soft);color:var(--accent-orange);display:flex;align-items:center;justify-content:center;margin-bottom:20px">' +
+        icon(c.ic, 20) +
+      '</div>' +
+      '<div style="font-size:var(--text-eyebrow);font-weight:600;text-transform:uppercase;letter-spacing:var(--tracking-widest);color:var(--text-muted);margin-bottom:8px">' + c.label + '</div>' +
+      '<div style="font-family:var(--font-heading);font-weight:700;font-size:var(--text-h5);line-height:var(--leading-snug);word-break:break-word">' + c.value + '</div>' +
+    '</div>';
+    h += c.href ? '<a href="' + c.href + '" style="text-decoration:none;color:inherit">' + inner + '</a>' : '<div>' + inner + '</div>';
+  });
+  byId('contactGrid').innerHTML = h;
+}
+
+function buildSocial() {
+  var h = '';
+  SOCIALS.forEach(function(s, i) {
+    h += '<a href="' + s.url + '" target="_blank" rel="noopener noreferrer" class="sr sr-delay-' + (i+1) + '" style="text-decoration:none;color:inherit">' +
+      '<div class="card card-interactive" style="padding:32px;cursor:pointer">' +
+        '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">' +
+          '<div style="width:48px;height:48px;border-radius:50%;background:var(--bg-elevated);border:1px solid var(--border);display:flex;align-items:center;justify-content:center">' +
+            fillIcon(s.ic, 20) +
+          '</div>' +
+        '</div>' +
+        '<h3 style="margin:0 0 8px;font-family:var(--font-heading);font-weight:700;font-size:var(--text-h4);transition:color var(--transition)">' + s.label + '</h3>' +
+        '<p style="font-size:var(--text-xs);color:var(--text-muted);line-height:var(--leading-normal);margin:0">' + s.desc + '</p>' +
+      '</div></a>';
+  });
+  byId('socialGrid').innerHTML = h;
+}
+
+function buildContactCta() {
+  byId('contactCta').innerHTML = '<div class="card-content">' +
+    '<h2 style="margin:0 0 16px;font-family:var(--font-heading);font-weight:800;font-size:var(--text-h2);letter-spacing:var(--tracking-snug);line-height:1;color:#080808">Ready to work together?</h2>' +
+    '<p style="font-size:var(--text-base);color:rgba(8,8,8,0.6);margin:0 0 32px;max-width:440px;margin-left:auto;margin-right:auto;line-height:var(--leading-normal)">Drop me an email or connect on social media. I respond within 24 hours.</p>' +
+    '<div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">' +
+      '<a class="btn btn-lg" href="mailto:dush8387@gmail.com" style="background:#080808;color:#fff">Send an email' + icon('mail',18) + '</a>' +
+      '<a class="btn btn-lg" href="uploads/Dushyant-Resume 1.pdf" target="_blank" rel="noopener noreferrer" style="border-color:rgba(8,8,8,0.3);color:#080808;background:transparent">Download resume' + icon('download',18) + '</a>' +
+    '</div></div>';
+}
+</script>
+</body>
+</html>

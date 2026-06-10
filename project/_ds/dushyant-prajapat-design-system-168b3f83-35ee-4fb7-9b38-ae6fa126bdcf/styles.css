@@ -1,0 +1,10 @@
+/* ============================================
+   Dushyant Prajapat Design System
+   Global entry point — consumers link this file.
+   Import order: fonts → tokens → base.
+   ============================================ */
+@import "./tokens/fonts.css";
+@import "./tokens/colors.css";
+@import "./tokens/typography.css";
+@import "./tokens/spacing.css";
+@import "./tokens/base.css";

@@ -1,0 +1,7 @@
+{
+  "name": "multi-page-portfolio",
+  "private": true,
+  "scripts": {
+    "dev": "npx -y http-server . -p 8080 -c-1 --cors"
+  }
+}

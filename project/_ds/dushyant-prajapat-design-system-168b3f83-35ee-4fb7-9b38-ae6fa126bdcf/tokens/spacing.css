@@ -1,0 +1,49 @@
+/* ============================================
+   SPACING, RADIUS, SHADOW, MOTION
+   ============================================ */
+:root {
+  /* ---- Spacing scale (4px base) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;     /* default grid gap */
+  --space-5: 20px;
+  --space-6: 24px;     /* mobile section padding / work-grid gap */
+  --space-8: 32px;     /* card padding */
+  --space-10: 40px;    /* large card padding / nav padding */
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;    /* section padding (mobile→desktop) */
+  --space-24: 100px;   /* desktop section padding */
+
+  /* ---- Layout ---- */
+  --container-max: 1400px;  /* max content width */
+  --nav-height: 72px;
+  --gap-grid: 16px;         /* bento / services gap */
+  --gap-cards: 24px;        /* work grid gap */
+
+  /* ---- Corner radius ---- */
+  --radius-sm: 8px;
+  --radius-md: 16px;    /* inputs, small cards */
+  --radius-lg: 24px;    /* default card radius */
+  --radius-xl: 32px;    /* large feature cards */
+  --radius-full: 999px; /* pills, buttons, chips, dots */
+
+  /* ---- Shadows / glows ---- */
+  /* The aesthetic relies on borders + blurred color "orbs" rather than
+     drop shadows. These are the few real shadows in use. */
+  --shadow-none: none;
+  --shadow-card: 0 1px 0 rgba(255,255,255,0.02) inset;
+  --glow-blur: 120px;        /* hero background glow blur radius */
+  --orb-blur: 60px;          /* in-card floating orb blur */
+  --glow-opacity: 0.15;      /* @kind other */
+
+  /* ---- Motion ---- */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);       /* @kind other */
+  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);  /* @kind other */
+  --duration-fast: 0.15s; /* @kind other */
+  --duration-base: 0.3s; /* @kind other */
+  --duration-slow: 0.6s; /* @kind other */
+  --duration-reveal: 0.7s; /* @kind other */
+}
