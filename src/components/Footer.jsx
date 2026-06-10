@@ -42,7 +42,7 @@ export function Footer({ onNav }) {
           </div>
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: 32, flexWrap: 'wrap', gap: 16 }}>
-          <span style={{ fontSize: 'var(--text-2xs)', color: 'var(--text-muted)' }}>&copy; 2025 Dushyant Prajapat. All rights reserved.</span>
+          <span style={{ fontSize: 'var(--text-2xs)', color: 'var(--text-muted)' }}>&copy; {new Date().getFullYear()} Dushyant Prajapat. All rights reserved.</span>
           <span style={{ fontSize: 'var(--text-2xs)', color: 'var(--text-muted)' }}>Designed &amp; built with <span style={{ color: 'var(--accent-orange)' }}>&hearts;</span> in India</span>
         </div>
       </div>
