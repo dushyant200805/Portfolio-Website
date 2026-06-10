@@ -136,6 +136,15 @@ button{font-family:inherit}
   .mobile-nav-label{font-size:clamp(2.75rem,12vw,4rem)}
   .mobile-overlay{padding:80px 20px 30px}
 }
+/* Tweak header for very small screens to avoid CTA overlapping menu */
+@media (max-width: 450px) {
+  .nav-pill{padding:0 8px;height:48px}
+  .nav-logo{font-size:1rem}
+  .cta-btn{padding:6px 8px}
+  .cta-btn .cta-text{display:none}
+  .cta-btn .cta-arrow{margin:0}
+  .theme-btn{width:34px;height:34px}
+}
 @media (max-width: 1024px) and (min-width: 769px) {
   .bento-grid{grid-template-columns:repeat(6,1fr) !important}
   .bento-grid>*{grid-column:span 3 !important;grid-row:auto !important}
