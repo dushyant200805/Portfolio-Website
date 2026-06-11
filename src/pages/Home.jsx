@@ -155,7 +155,7 @@ function Bento({ onNav }) {
           <div data-aos="fade-up"  data-aos-duration="1000" data-aos-delay="180" style={{ display: 'flex', alignItems: 'center', gap: 32, paddingTop: 22, borderTop: '1px solid rgba(255,255,255,0.06)', flexWrap: 'wrap', color: '#f5f5f5', width: '100%' }}>
             <div style={{ display: 'flex', gap: 32, flexWrap: 'wrap' }}>
               <StatBlock value="17+" label="Projects" />
-              <StatBlock value="3+" label="Yrs Exp" />
+              <StatBlock value="1+" label="Yrs Exp" />
               <StatBlock value="100%" label="Remote-ready" accent />
             </div>
             <Button variant="primary" size="sm" icon="arrow" onClick={() => onNav('work')} style={{ marginLeft: 'auto' }}>See Work</Button>

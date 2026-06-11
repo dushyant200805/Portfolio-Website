@@ -1,4 +1,4 @@
 export const CERTS = [
-  { name: 'ReactJS for Beginners', org: 'Simplilearn SkillUp', date: 'May 2026' },
-  { name: 'Claude 101', org: 'Anthropic', date: 'May 2026' },
+  { name: 'ReactJS for Beginners', org: 'Simplilearn SkillUp', date: 'May 2026', href: '/uploads/React-Certificate.pdf' },
+  { name: 'Claude 101', org: 'Anthropic', date: 'May 2026', href: '/uploads/Clayde-ai.pdf' },
 ];

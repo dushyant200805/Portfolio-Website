@@ -1,10 +1,25 @@
 import { Icon } from './Icon';
+import { useState } from 'react';
 
 const EASE = '0.3s cubic-bezier(0.4,0,0.2,1)';
 const link = { fontSize: 'var(--text-xs)', color: 'var(--text-secondary)', cursor: 'pointer', background: 'none', border: 'none', padding: 0, fontFamily: 'var(--font-body)', textAlign: 'left', transition: `color ${EASE}`, textDecoration: 'none' };
 const h4 = { fontSize: 'var(--text-eyebrow)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: 'var(--tracking-widest)', color: 'var(--text-muted)', marginBottom: 18 };
 
 export function Footer({ onNav }) {
+  const [hoveredLink, setHoveredLink] = useState(null);
+
+  const handleLinkHover = (linkName) => {
+    setHoveredLink(linkName);
+  };
+
+  const handleLinkLeave = () => {
+    setHoveredLink(null);
+  };
+
+  const getLinkStyle = (linkName) => ({
+    ...link,
+    color: hoveredLink === linkName ? 'var(--accent-orange)' : 'var(--text-secondary)',
+  });
   return (
     <footer style={{ borderTop: '1px solid var(--border)', padding: '60px clamp(20px,4vw,40px) 40px' }}>
       <div style={{ maxWidth: 'var(--container-max)', margin: '0 auto' }}>
@@ -35,9 +50,9 @@ export function Footer({ onNav }) {
           <div>
             <div style={h4}>Contact</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              <a href="mailto:dush8387@gmail.com" style={link}>dush8387@gmail.com</a>
-              <a href="tel:+918387801277" style={link}>+91 83878 01277</a>
-              <button style={link} onClick={() => onNav('contact')}>Hire me</button>
+              <a href="mailto:dush8387@gmail.com" style={getLinkStyle('email')} onMouseEnter={() => handleLinkHover('email')} onMouseLeave={handleLinkLeave}>dush8387@gmail.com</a>
+              <a href="tel:+918387801277" style={getLinkStyle('phone')} onMouseEnter={() => handleLinkHover('phone')} onMouseLeave={handleLinkLeave}>+91 83878 01277</a>
+              <button style={getLinkStyle('hire')} onMouseEnter={() => handleLinkHover('hire')} onMouseLeave={handleLinkLeave} onClick={() => onNav('contact')}>Hire me</button>
             </div>
           </div>
         </div>

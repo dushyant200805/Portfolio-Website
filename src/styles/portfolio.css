@@ -74,8 +74,9 @@ button{font-family:inherit}
 .page-enter{opacity:0;transform:translateY(16px);transition:opacity 1s cubic-bezier(0.22,1,0.36,1),transform 1s cubic-bezier(0.22,1,0.36,1)}
 .page-enter.visible{opacity:1;transform:translateY(0)}
 
-.hero-section{min-height:88vh;padding:120px clamp(20px,4vw,40px) 70px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.hero-section{min-height:700px;padding:120px clamp(20px,4vw,40px) 70px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
 .hero-inner{position:relative;z-index:1;max-width:var(--container-max);width:100%;margin:0 auto}
+.hero-inner h1{word-spacing:normal;white-space:normal;overflow-wrap:break-word;word-break:keep-all}
 .hero-line{overflow:hidden;display:block}
 .hero-line-inner{display:block;transform:translateY(110%);transition:transform 0.9s cubic-bezier(0.22,1,0.36,1)}
 .hero-line-inner.d1{transition-delay:0.05s}
@@ -135,8 +136,29 @@ button{font-family:inherit}
   .mobile-preview{display:none !important}
   .mobile-nav-label{font-size:clamp(2.75rem,12vw,4rem)}
   .mobile-overlay{padding:80px 20px 30px}
+  .hero-inner h1{font-size:clamp(2.5rem,7vw,5rem);margin:0 0 32px !important}
 }
-/* Tweak header for very small screens to avoid CTA overlapping menu */
+/* Extra small screens */
+@media(max-width:530px) {
+  :root{--text-display:clamp(2rem,6vw,3.5rem);--text-h1:clamp(1.75rem,5vw,3rem)}
+  .hero-section{padding:100px clamp(16px,3vw,24px) 50px}
+  .hero-inner h1{line-height:1.1;margin:0 0 24px !important}
+  .hero-inner>p{font-size:var(--text-sm) !important}
+}
+/* Very small screens */
+@media(max-width:400px) {
+  :root{--text-display:clamp(1.5rem,4vw,2.25rem);--text-h1:clamp(1.25rem,3.5vw,2rem)}
+  .hero-section{padding:80px clamp(12px,2vw,20px) 40px;
+               min-height:450px !important}
+  .hero-inner h1{line-height:1.05;margin:0 0 16px !important;letter-spacing:-0.02em}
+  .hero-stats{gap:20px !important}
+}
+/* Ultra small screens */
+@media(max-width:360px) {
+  :root{--text-display:clamp(1.25rem,3vw,1.75rem);--text-h1:clamp(1rem,2.5vw,1.5rem)}
+  .hero-section{padding:70px clamp(12px,2vw,16px) 35px}
+  .hero-inner h1{line-height:1.05;margin:0 0 16px !important;letter-spacing:-0.015em}
+}
 @media (max-width: 450px) {
   .nav-pill{padding:0 8px;height:48px}
   .nav-logo{font-size:1rem}

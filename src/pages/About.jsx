@@ -138,18 +138,23 @@ function Certifications() {
       <SectionHeader eyebrow="Certifications" title="Credentials" />
       <div style={{ display: 'flex', gap: 'var(--gap-grid)', flexWrap: 'wrap' }}>
         {CERTS.map((c, i) => (
-          <Card key={i} padding={28} data-aos="fade-up"  data-aos-duration="1000" data-aos-delay={`${(i + 1) * 60}`} style={{ flex: '1 1 280px' }}>
-            <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}>
-              <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'var(--orange-soft)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <Icon name="award" size={18} style={{ color: 'var(--accent-orange)' }} />
+          <a key={i} href={c.href} target="_blank" rel="noopener noreferrer" style={{ flex: '1 1 280px', textDecoration: 'none', color: 'inherit' }}>
+            <Card padding={28} data-aos="fade-up"  data-aos-duration="1000" data-aos-delay={`${(i + 1) * 60}`} style={{ flex: '1 1 280px', height: '100%', cursor: 'pointer', transition: 'all 0.3s cubic-bezier(0.4,0,0.2,1)' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16, justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16, flex: 1 }}>
+                  <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'var(--orange-soft)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <Icon name="award" size={18} style={{ color: 'var(--accent-orange)' }} />
+                  </div>
+                  <div>
+                    <h4 style={{ margin: '0 0 4px', fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: 'var(--text-h5)' }}>{c.name}</h4>
+                    <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)', margin: '0 0 8px' }}>{c.org}</p>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--text-2xs)', color: 'var(--text-muted)' }}><Icon name="calendar" size={12} />{c.date}</div>
+                  </div>
+                </div>
+                <Icon name="download" size={16} style={{ color: 'var(--accent-orange)', flexShrink: 0, marginTop: 2 }} />
               </div>
-              <div>
-                <h4 style={{ margin: '0 0 4px', fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: 'var(--text-h5)' }}>{c.name}</h4>
-                <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)', margin: '0 0 8px' }}>{c.org}</p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--text-2xs)', color: 'var(--text-muted)' }}><Icon name="calendar" size={12} />{c.date}</div>
-              </div>
-            </div>
-          </Card>
+            </Card>
+          </a>
         ))}
       </div>
     </section>

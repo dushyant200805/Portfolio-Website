@@ -22,7 +22,7 @@ export function ContactScreen({ onNav, leaving }) {
         <div className="contact-grid">
           {CONTACT_INFO.map((c, i) => {
             const inner = (
-              <Card key={c.label} padding={28} data-aos="fade-up"  data-aos-duration="1000" data-aos-delay={`${(i + 1) * 60}`} style={{ height: '100%' }}>
+              <Card key={c.label} padding={28} data-aos="fade-up"  data-aos-duration="1000" data-aos-delay={`${(i + 1) * 60}`} style={{ height: '100%', transition: 'all 0.3s cubic-bezier(0.4,0,0.2,1)' }}>
                 <div style={{ width: 48, height: 48, borderRadius: 'var(--radius-md)', background: 'var(--orange-soft)', color: 'var(--accent-orange)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
                   <Icon name={c.ic} size={20} />
                 </div>
@@ -30,7 +30,7 @@ export function ContactScreen({ onNav, leaving }) {
                 <div style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: 'var(--text-h5)', lineHeight: 'var(--leading-snug)', wordBreak: 'break-word' }}>{c.value}</div>
               </Card>
             );
-            return c.href ? <a key={c.label} href={c.href} style={{ textDecoration: 'none', color: 'inherit' }}>{inner}</a> : <div key={c.label}>{inner}</div>;
+            return c.href ? <a key={c.label} href={c.href} style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer', display: 'block', transition: 'transform 0.3s cubic-bezier(0.4,0,0.2,1)' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; }}>{inner}</a> : <div key={c.label}>{inner}</div>;
           })}
         </div>
       </section>
